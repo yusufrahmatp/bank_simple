@@ -30,5 +30,5 @@ end
 
   puts "Bikin acc"
   create_account
-  puts @acc_data[@acc.to_s.to_sym][:name]
+  create_account
   admin_print_data
