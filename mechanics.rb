@@ -6,40 +6,41 @@ def create_account
     @acc = Random.rand(1000..9999)
     break if @acc_data[@acc.to_s.to_sym].nil?
   end
-  print "Name: "
+  print "Name           : "
   name = gets.chomp
-  print "PIN: "
+  print "PIN            : "
   pin = gets.chomp
-  print "Address: "
+  print "Address        : "
   address = gets.chomp
   print "Initial Balance: "
   balance = gets.chomp
   @acc_data[@acc.to_s.to_sym] = Account.new(name,pin.to_i,address,balance.to_i,true)
+  puts "Your account has been created with account number #{@acc}"
 end
 
 def admin_print_data
   @acc_data.each do |x,y|
     puts "----------------------------------------------------"
-    puts "-------Account no. #{x}-------"
+    puts "------------------Account no. #{x}------------------"
     puts "----------------------------------------------------"
-    puts "Name:        #{@acc_data[x][:name]}"
+    puts "Name      :  #{@acc_data[x][:name]}"
     puts "PIN Number:  #{@acc_data[x][:pin]}"
-    puts "Address:     #{@acc_data[x][:address]}"
-    puts "Balance:     Rp #{@acc_data[x][:balance]}"
-    puts "Active?      #{@acc_data[x][:active]}"
+    puts "Address   :  #{@acc_data[x][:address]}"
+    puts "Balance   :  Rp #{@acc_data[x][:balance]}"
+    puts "Active    :  #{@acc_data[x][:active]}"
     puts "----------------------------------------------------"
   end
 end
 
 def print_data (acc)
     puts "----------------------------------------------------"
-    puts "-------Account no. #{acc.to_s}-------"
+    puts "------------------Account no. #{acc.to_s}------------------"
     puts "----------------------------------------------------"
-    puts "Name:        #{@acc_data[acc][:name]}"
+    puts "Name      :  #{@acc_data[acc][:name]}"
     puts "PIN Number:  #{@acc_data[acc][:pin]}"
-    puts "Address:     #{@acc_data[acc][:address]}"
-    puts "Balance:     Rp #{@acc_data[acc][:balance]}"
-    puts "Active?      #{@acc_data[acc][:active]}"
+    puts "Address   :  #{@acc_data[acc][:address]}"
+    puts "Balance   :  Rp #{@acc_data[acc][:balance]}"
+    puts "Active    :  #{@acc_data[acc][:active]}"
     puts "----------------------------------------------------"
 end
 
@@ -89,3 +90,6 @@ end
 def block_account (acc)
   @acc_data[acc][:valid] = false
 end
+
+create_account
+admin_print_data
