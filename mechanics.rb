@@ -19,6 +19,7 @@ end
 
 def admin_print_data
   @acc_data.each do |x,y|
+    puts "Account no. #{x}"
     puts @acc_data[x][:name]
     puts @acc_data[x][:pin]
     puts @acc_data[x][:address]
