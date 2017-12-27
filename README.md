@@ -7,6 +7,7 @@ Made By:
 
 ## Run Program :
 
+For the ruby only version, run
 ```
-ruby mechanics.rb
+ruby ruby_only_ver/mechanics.rb
 ```
