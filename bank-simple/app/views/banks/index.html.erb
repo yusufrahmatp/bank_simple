@@ -1,0 +1,41 @@
+<h1>Welcome to Bank Simple</h1>
+
+<table>
+	<tr>
+		<th>User ID</th>
+		<th>Username</th>
+		<th>Password</th>
+		<th>Balance</th>
+		<th>Active</th>
+		<th>Chance</th>
+	</tr>
+	
+	<% @banks.each do |b| %>
+	<tr>
+		<td><%= b.hashid %></td>
+		<td><%= b.username %></td>
+		<td><%= b.password %></td>
+		<td><%= b.balance %></td>
+		<td><%= b.active %></td>
+		<td><%= b.chance %></td>
+	</tr>
+	<% end %>
+
+</table>
+
+<%= form_for @bank do |f| %>
+	<p>
+		<%= f.label :username %><br/>
+		<%= f.text_field :username %>
+	</p>
+	<p>
+		<%= f.label :password %><br/>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
+
+<%= link_to 'Create Account', banks_new_path %>
