@@ -1,12 +1,12 @@
 # Bank_Simple
 
-MADE BY :
 
+Made By:
 - Yusuf Rahmat Pratama
-
 - Nicholas Rianto Putra
 
+## Run Program :
 
-RUN :
-
-- ruby mechanics.rb
+```
+ruby mechanics.rb
+```
