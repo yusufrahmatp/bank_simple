@@ -1,0 +1,20 @@
+<h1 align="center">History of transactions</h1>
+
+<div>
+	<table align="center" style="width:50%">
+		<tr>
+			<th>Type</th>
+			<th>Amount</th>
+			<th>Times</th>
+		</tr>
+		<% @user_transactions.each do |t| %>
+		<tr>
+			<td><%= t.trans_type %></td> 
+			<td><%= t.amount %></td> 
+			<td><%= t.created_at %></td> 
+		</tr>
+		<% end %>
+	</table>
+	<br/>
+	<div align="center"><%= link_to "Back", user_path(current_user), class: "btn btn-primary btn-lg" %></div>
+</div>

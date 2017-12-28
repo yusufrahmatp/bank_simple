@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171228080505) do
+ActiveRecord::Schema.define(version: 20171228151058) do
 
   create_table "transactions", force: :cascade do |t|
-    t.string "type"
+    t.string "trans_type"
     t.integer "amount"
     t.integer "user_id"
     t.datetime "created_at", null: false

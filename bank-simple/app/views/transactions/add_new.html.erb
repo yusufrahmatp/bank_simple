@@ -1,0 +1,19 @@
+<h1 align="center">Add balance</h1>
+
+<%= render 'shared/errors',obj: @transaction %>
+
+<%= form_for(@transaction, :html => {class: "form-horizontal", role: "form"}, url: add_path) do |t| %>
+	<div align="center" class="form-group">
+		<div class="control-label col-sm-5">
+			<%= t.label :amount %><br/>
+		</div>
+		<div class="col-sm-2">
+			<%= t.number_field :amount, class: "form-control", autocomplete: "off", placeholder: "Enter amount" %>
+		</div>
+	</div>
+	<div align="center" class="form-group">
+		<div>
+			<%= t.submit "Add", class: 'btn btn-primary btn-lg' %>  <%= link_to "Back", user_path(current_user), class: 'btn btn-danger btn-lg' %>
+		</div>
+	</div>
+<% end %>

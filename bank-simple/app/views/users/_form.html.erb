@@ -1,0 +1,40 @@
+<%= render 'shared/errors',obj: @user %>
+
+<%= form_for @user, :html => {class: "form-horizontal", role: "form"} do |f| %>
+	<div class="form-group">
+		<div class="control-label col-sm-5">
+			<%= f.label :username %><br/>
+		</div>
+		<div class="col-sm-2">
+			<%= f.text_field :username, class: "form-control", placeholder: "Enter username" %>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="control-label col-sm-5">
+			<%= f.label :password %><br/>
+		</div>
+		<div class="col-sm-2">
+			<%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "Enter password" %>
+		</div>
+	</div>
+	<% if !logged_in? %>
+	<div class="form-group">
+		<div class="control-label col-sm-5">
+			<%= f.label :balance %><br/>
+		</div>
+		<div class="col-sm-2">
+			<%= f.number_field :balance, class: "form-control", autocomplete: "off", placeholder: "Enter balance" %>
+		</div>
+	</div>
+	<% end %>
+	<div align="center" class="form-group">
+		<div>
+			<%= f.submit(@user.new_record? ? "Sign up" : "Update account", class: 'btn btn-primary btn-lg') %>
+			<% if logged_in? %>
+				<%= link_to "Back", user_path(current_user), class: 'btn btn-danger btn-lg' %>
+			<% else %>
+				<%= link_to "Back", root_path, class: 'btn btn-danger btn-lg' %>
+			<% end %>
+		</div>
+	</div>
+<% end %>
