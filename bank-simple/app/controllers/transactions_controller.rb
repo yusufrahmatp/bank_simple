@@ -41,13 +41,13 @@ class TransactionsController < ApplicationController
   end
 
   def show
-    @user_transactions = current_user.transactions
+    @user_transactions = current_user.transactions.paginate(page: params[:page], per_page: 7)
   end
 
   private
   def require_same_user
     if current_user != User.find(params[:id])
-      flash[:danger] = "You can only do transaction with your own account"
+      flash[:danger] = "You can't see other account's infos"
       redirect_to user_path(current_user)
     end
   end

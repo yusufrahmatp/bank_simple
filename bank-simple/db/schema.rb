@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171228151058) do
+ActiveRecord::Schema.define(version: 20171228185356) do
 
   create_table "transactions", force: :cascade do |t|
     t.string "trans_type"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20171228151058) do
     t.integer "balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "active"
+    t.integer "chance"
   end
 
 end

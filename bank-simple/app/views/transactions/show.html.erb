@@ -1,5 +1,7 @@
 <h1 align="center">History of transactions</h1>
-
+<div align="center">
+	<%= will_paginate @user_transactions %>
+</div>
 <div>
 	<table align="center" style="width:50%">
 		<tr>
@@ -16,5 +18,8 @@
 		<% end %>
 	</table>
 	<br/>
-	<div align="center"><%= link_to "Back", user_path(current_user), class: "btn btn-primary btn-lg" %></div>
+	<div align="center">
+		<%= will_paginate @user_transactions %>
+	</div>
+	<div align="center"><%= link_to "Back", user_path(current_user), class: "btn btn-danger btn-lg" %></div>
 </div>

@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(set_params)
+    @user.active = "yes"
+    @user.chance = 3
     if @user.save
       flash[:success] = "Your account was successfully created"
       redirect_to root_path
