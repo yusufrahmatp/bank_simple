@@ -2,8 +2,8 @@
 
 
 Made By:
-- Yusuf Rahmat Pratama
-- Nicholas Rianto Putra
+- Yusuf Rahmat Pratama (http://github.com/yusufrahmatp)
+- Nicholas Rianto Putra (http://github.com/Nicholaz99)
 
 ## Run Program (Ruby-only Version):
 
