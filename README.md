@@ -9,5 +9,5 @@ Made By:
 
 For the ruby only version, run
 ```
-ruby ruby_only_ver/mechanics.rb
+$ ruby ruby_only_ver/mechanics.rb
 ```
