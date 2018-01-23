@@ -1,4 +1,4 @@
-# Bank_Simple
+# Banking on Rails
 
 
 Made By:
